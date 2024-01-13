@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>QA-Test</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+   
+  
+
+ 
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        pre {
+          background-color: #f4f4f4;
+          padding: 10px;
+          overflow-x: auto;
+          font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+        }
+        .describe {
+            color: rgb(255, 179, 0);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+          
+        }
+        .function{
+            color: rgb(16, 87, 241);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+            
+        }
+        .name{
+             color: rgba(35, 205, 8, 0.93);
+             font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+             
+        }
+        .cy{
+            color: rgb(16, 87, 241);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+            
+        }
+        .get{
+            color: rgba(255, 255, 0, 0.87);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+            
+        }
+        .var{
+            color: rgb(16, 87, 241);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+           
+        }
+      </style>
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="index.html" class=" d-flex align-items-center"> 
+                    <strong><span style="color: orange;">Craft</span><span style="color:rgb(2, 2, 54)">-Knowledge</span></strong> 
+                </a>
+            </div>
+
+        </div>
+        <!-- End Logo -->
+
+
+        <!-- End Search Bar -->
+
+
+        <!-- End Icons Navigation -->
+
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link " href="Text_Verification.html">
+                    <span>Text Verification</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="Text_Box.html">
+                    <span>Text Box</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="Check_Box.html">
+                    <span>Check Box</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="Radio_button.html">
+                    <span>Radio Button</span>
+                </a>
+            </li>
+           
+            <li class="nav-item">
+                <a class="nav-link " href="Upload_File.html">
+                    <span>File upload</span>
+                </a>
+            </li>
+           
+            <li class="nav-item">
+                <a class="nav-link " href="Mouse_Event.html">
+                    <span>Mouse Event</span>
+                </a>
+            </li>
+           
+            <li class="nav-item">
+                <a class="nav-link " href="Alert.html">
+                    <span>Alert</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="Frames.html">
+                    <span>Frames</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="New_Tab.html">
+                    <span>New Tab</span>
+                </a>
+            </li>
+           
+            <li class="nav-item">
+                <a class="nav-link " href="Select_Menu.html">
+                    <span>Select Menu</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link " href="Auto_Complete.html">
+                    <span>Auto Complet</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link " href="Forms.html">
+                    <span>Table</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link " href="Menu.html">
+                    <span>End-To-End</span>
+                </a>
+            </li>
+            
+            <!-- End Dashboard Nav -->
+
+
+            <!-- End Blank Page Nav -->
+
+        </ul>
+
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+        <div class="row bg-white p-4 mb-4">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h1 class="text-center"> <strong><span style="color: orange;">QA</span><span style="color:rgb(2, 2, 54)">-Tool</span></strong> </h1>    
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="pagetitle">
+            <h1>Mouse Event</h1>
+            <hr>
+        </div>
+        <!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="gap-2 mt-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-outline btn-primary btn-sm" onclick="NormalClick()">Click Me</button>
+                                    </div>
+                                    <div class="col-6">
+                                        
+                                    </div>
+                                </div>                             
+                            </div>
+
+                            <div class="gap-2 mt-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-outline btn-primary btn-sm" ondblclick="dbclick()" id="dbclick">Double Click Me</button>
+                                    </div>
+                                    
+                                </div>                             
+                            </div>
+                            <div class="gap-2 mt-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-outline btn-primary btn-sm" id="mouseOver" onmouseover="mouseOver()">Mouseover on Me</button>
+                                    </div>
+                                   
+                                </div>                             
+                            </div>
+                            <div class="gap-2 mt-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-primary btn-sm" id="RightClick" oncontextmenu="RightClick()">Right Click Me</button>
+                                    </div>
+                                    
+                                </div>                             
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p>Result: <span id="result"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body pt-4">
+                            <h1 class="card-title">Implementation</h1>
+<pre>
+    <code>
+<span class="describe">describe</span>(<span class="name">'Tutorialspoint'</span>, <span class="function">function ()</span> {
+    <span class="describe">it</span>(<span class="name">'Scenario 1'</span> , <span class="function">function ()</span>{
+        <span class="function">cy</span> <span class="describe">.visit</span>(<span class="name">"https://test.com"</span> )
+        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'h1'</span>)<span class="describe">.then</span>(<span class="function">function(e)</span>{
+        <span class="var">const</span> <span class="describe">t</span> = <span class="describe">e</span><span class="var">.text()</span>
+        <span class="function">expect(t)</span><span class="describe">.to</span><span class="function">.contains</span>(<span class="name">'This is h1 element'</span>)
+        })
+    })
+ })
+    </code>
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span style="color: orange;">Craft</span><span style="color:rgb(2, 2, 54)">-Knowledge</span></strong> . All Rights Reserved
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  
+     <script>
+        function NormalClick(){
+          
+                const myElement = document.getElementById('result');
+                // Overwrite the content using innerHTML
+                myElement.innerHTML = 'Normal Clicked';
+             
+        }
+       
+        function dbclick(){
+            //const element = document.getElementById('dbclick');
+           // element.addEventListener('dblclick', function(event) {
+                const myElement = document.getElementById('result');
+                // Overwrite the content using innerHTML
+                myElement.innerHTML = 'dblclick Clicked';
+              //});
+    
+        }
+
+        function mouseOver(){
+            //const element = document.getElementById('mouseOver');
+            //element.addEventListener('mouseover', function(event) {
+                const myElement = document.getElementById('result');
+                // Overwrite the content using innerHTML
+                myElement.innerHTML = 'mouseover';
+                // Code to execute when the mouse pointer enters the element
+             // })
+        }
+
+        function RightClick(){
+        //element.addEventListener('contextmenu', function(event) {
+            const myElement = document.getElementById('result');
+                // Overwrite the content using innerHTML
+                myElement.innerHTML = 'Right Click';
+                // Code to execute when the mouse pointer enters the element
+            //event.preventDefault(); // Prevents the default context menu from appearing
+          //});
+        }
+     </script>
+</body>
+
+</html>
