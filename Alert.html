@@ -12,7 +12,7 @@
     <!-- Favicons -->
    
    
-    <!-- Google Fonts -->
+
    
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,6 +25,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
     <style>
         pre {
           background-color: #f4f4f4;
@@ -76,7 +77,6 @@
                     <strong><span style="color: orange;">Craft</span><span style="color:rgb(2, 2, 54)">-Knowledge</span></strong> 
                 </a>
             </div>
-
         </div>
         <!-- End Logo -->
 
@@ -94,7 +94,7 @@
 
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link " href="Text_Verification.html">
+                <a class="nav-link " href="index.html">
                     <span>Text Verification</span>
                 </a>
             </li>
@@ -161,7 +161,7 @@
             </li>
             
             <li class="nav-item">
-                <a class="nav-link " href="Menu.html">
+                <a class="nav-link " href="https://end-to-end-v1.onrender.com/">
                     <span>End-To-End</span>
                 </a>
             </li>
@@ -185,13 +185,62 @@
             <div class="col-2"></div>
         </div>
         <div class="pagetitle">
-            <h1>Text Verification</h1>
+            <h1>Alert </h1>
+            <hr>
 
         </div>
-        <!-- End Page Title -->
 
         <section class="section">
+            <div class="row">
+                <div class="col-lg-6">
 
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-grid gap-2 mt-3 p-2">
+                                <button type="button" class="btn btn-primary" id="normalAlert" name="Normal-Alert" onclick="normalAlrt()">Normal Alert</button>
+                            </div>
+                            <div class="d-grid gap-2 mt-3 p-2">
+                                <button type="button" class="btn btn-secondary" id="CofirmAlert" name="Confirm-Alert" onclick="ConfirmAlert()">Confirem Alert</button>
+                            </div>
+                            <div class="d-grid gap-2 mt-3 p-2">
+                                <button type="button" class="btn btn-success" id="promtAlert" name="Promt-Alert" onclick="PropmtAlert()">Propmt Alert</button>
+                            </div>
+
+
+
+                        </div>
+                
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p>Result: <span id="result"></span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body pt-4">
+                            <h1 class="card-title">Implementation</h1>
+<pre>
+    <code>
+<span class="describe">describe</span>(<span class="name">'Tutorialspoint'</span>, <span class="function">function ()</span> {
+    <span class="describe">it</span>(<span class="name">'Scenario 1'</span> , <span class="function">function ()</span>{
+        <span class="function">cy</span> <span class="describe">.visit</span>(<span class="name">"https://test.com"</span> )
+        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'h1'</span>)<span class="describe">.then</span>(<span class="function">function(e)</span>{
+        <span class="var">const</span> <span class="describe">t</span> = <span class="describe">e</span><span class="var">.text()</span>
+        <span class="function">expect(t)</span><span class="describe">.to</span><span class="function">.contains</span>(<span class="name">'This is h1 element'</span>)
+        })
+    })
+ })
+    </code>
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -219,6 +268,48 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        function normalAlrt(){
+            alert("This is Normal alert");
+            
+            
+            const myElement = document.getElementById('result');
+            // Overwrite the content using innerHTML
+            myElement.innerHTML = 'Normal Alert';
+        }
+        
+        function ConfirmAlert(){
+            const result = confirm("Are you sure you want to proceed?");
+             if (result === true) {
+                const myElement = document.getElementById('result');
+                // Overwrite the content using innerHTML
+                myElement.innerHTML = 'Ok Clicked';
+             } else {
+                const myElement = document.getElementById('result');
+                // Overwrite the content using innerHTML
+                myElement.innerHTML = 'Cancel Clicked';
+              }
+        
+            
+            }
+        
+            function PropmtAlert(){
+                const userInput = prompt("Please enter your name:");
+if (userInput !== null) {
+  // User clicked OK and entered a value
+
+  const myElement = document.getElementById('result');
+                // Overwrite the content using innerHTML
+                myElement.innerHTML = userInput;
+  //console.log("User entered:", userInput);
+} else {
+    const myElement = document.getElementById('result');
+    // Overwrite the content using innerHTML
+    myElement.innerHTML = 'Cancel Clicked';
+}
+            }
+    </script>
 
 </body>
 
