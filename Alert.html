@@ -225,17 +225,46 @@
                         <div class="card-body pt-4">
                             <h1 class="card-title">Implementation</h1>
 <pre>
-    <code>
-<span class="describe">describe</span>(<span class="name">'Tutorialspoint'</span>, <span class="function">function ()</span> {
-    <span class="describe">it</span>(<span class="name">'Scenario 1'</span> , <span class="function">function ()</span>{
-        <span class="function">cy</span> <span class="describe">.visit</span>(<span class="name">"https://test.com"</span> )
-        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'h1'</span>)<span class="describe">.then</span>(<span class="function">function(e)</span>{
-        <span class="var">const</span> <span class="describe">t</span> = <span class="describe">e</span><span class="var">.text()</span>
-        <span class="function">expect(t)</span><span class="describe">.to</span><span class="function">.contains</span>(<span class="name">'This is h1 element'</span>)
+<code>
+describe('template spec', () => {
+ it('normalAlert', () => {
+    cy.visit('https://html-element-for-testing.onrender.com/Alert.html')
+    cy.get('#normalAlert').click()
+    
+        cy.on('window:alert', (t) => {
+        expect(t).to.contains('This is Normal alert')
         })
+    cy.get('#result').should('have.text', 'Normal Alert')
+
     })
- })
-    </code>
+
+ it('confirmAlert', () => {
+    cy.visit('https://html-element-for-testing.onrender.com/Alert.html')
+    cy.get('#CofirmAlert').click()
+
+    cy.on('window:confirm', (t) => {
+        expect(t).to.contains('Are you sure you want to proceed?')
+    })
+    //  ok clicked
+    // cy.on('window:confirm', () => true)
+    // cy.get('#result').should('have.text', 'Ok Clicked')
+
+    // cancel click
+    cy.on('window:confirm', () => false)
+    cy.get('#result').should('have.text', 'Cancel Clicked')
+
+    })
+ it('promptAlert', () => {
+    cy.visit('https://html-element-for-testing.onrender.com/Alert.html')
+    cy.window().then((win) => {
+        cy.stub(win, 'prompt').returns('Wellcom');
+    })
+    cy.get('#promtAlert').click()
+    cy.get('#result').should('have.text', 'Wellcom');
+})
+
+})
+</code>
 </pre>
                         </div>
                     </div>

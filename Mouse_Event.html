@@ -28,42 +28,36 @@
 
     <style>
         pre {
-          background-color: #f4f4f4;
-          padding: 10px;
-          overflow-x: auto;
-          font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
         }
         .describe {
             color: rgb(255, 179, 0);
             font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-          
         }
-        .function{
+        .function {
             color: rgb(16, 87, 241);
             font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-            
         }
-        .name{
-             color: rgba(35, 205, 8, 0.93);
-             font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-             
+        .name {
+            color: rgba(35, 205, 8, 0.93);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
         }
-        .cy{
+        .cy {
             color: rgb(16, 87, 241);
             font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-            
         }
-        .get{
+        .get {
             color: rgba(255, 255, 0, 0.87);
             font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-            
         }
-        .var{
+        .var {
             color: rgb(16, 87, 241);
             font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-           
         }
-      </style>
+    </style>
 </head>
 
 <body>
@@ -246,17 +240,34 @@
                         <div class="card-body pt-4">
                             <h1 class="card-title">Implementation</h1>
 <pre>
-    <code>
-<span class="describe">describe</span>(<span class="name">'Tutorialspoint'</span>, <span class="function">function ()</span> {
-    <span class="describe">it</span>(<span class="name">'Scenario 1'</span> , <span class="function">function ()</span>{
-        <span class="function">cy</span> <span class="describe">.visit</span>(<span class="name">"https://test.com"</span> )
-        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'h1'</span>)<span class="describe">.then</span>(<span class="function">function(e)</span>{
-        <span class="var">const</span> <span class="describe">t</span> = <span class="describe">e</span><span class="var">.text()</span>
-        <span class="function">expect(t)</span><span class="describe">.to</span><span class="function">.contains</span>(<span class="name">'This is h1 element'</span>)
-        })
-    })
- })
-    </code>
+<code>
+<span class="describe">describe</span>(<span class="name">"Mouse Event testing"</span>, () => {
+   <span class="describe">it</span>(<span class="name">"Normal Click testing"</span>, () => {
+        <span class="function">cy</span>.<span class="function">visit</span>("https://html-element-for-testing.onrender.com/Mouse_Event.html");
+        <span class="function">cy</span>.<span class="describe">get</span>(<span class="name">'#normalClick'</span>).<span class="function">click</span>();
+        <span class="function">cy</span>.<span class="describe">get</span>(<span class="name">"#result"</span>).<span class="describe">should</span>('have.text', <span class="name">'Normal Clicked'</span>);
+        <span class="function">cy</span>.<span class="describe">get</span>(<span class="name">"#result"</span>).<span class="describe">should</span>('have.text', <span class="name">'Normal Clicked'</span>);
+    });
+
+    <span class="describe">it</span>(<span class="name">"Double Click Testing"</span>, () => {
+        <span class="function">cy</span>.<span class="function">visit</span>("https://html-element-for-testing.onrender.com/Mouse_Event.html");
+        <span class="function">cy</span>.<span class="describe">get</span>(<span class="name">'#doubleClick'</span>).<span class="function">dblclick</span>();
+        <span class="function">cy</span>.<span class="describe">get</span>(<span class="name">"#result"</span>).<span class="describe">should</span>('have.text', <span class="name">'dblclick Clicked'</span>);
+        });
+
+    <span class="describe">it</span>(<span class="name">"Mouse Over Testing"</span>, () => {
+        <span class="function">cy</span>.<span class="function">visit</span>("https://html-element-for-testing.onrender.com/Mouse_Event.html");
+        <span class="function">cy</span>.<span class="describe">get</span>(<span class="name">'#mouseOver'</span>).<span class="describe">trigger</span>(<span class="name">'mouseover'</span>);
+        <span class="function">cy</span>.<span class="describe">get</span>(<span class="name">"#result"</span>).<span class="describe">should</span>('have.text', <span class="name">'mouseover'</span>);
+        });
+
+    <span class="describe">it</span>(<span class="name">"Right Click Testing"</span>, () => {
+        <span class="function">cy</span>.<span class="function">visit</span>("https://html-element-for-testing.onrender.com/Mouse_Event.html");
+        <span class="function">cy</span>.<span class="describe">get</span>(<span class="name">'#RightClick'</span>).<span class="describe">trigger</span>(<span class="name">'contextmenu'</span>);
+        <span class="function">cy</span>.<span class="describe">get</span>(<span class="name">"#result"</span>).<span class="describe">should</span>('have.text', <span class="name">'Right Click'</span>);
+        });
+});
+</code>
 </pre>
                         </div>
                     </div>
