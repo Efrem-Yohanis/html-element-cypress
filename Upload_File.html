@@ -224,8 +224,9 @@
 <code>
     <span class="keyword">describe</span>('<span class="selector">File Upload Test</span>', <span class="function">()</span> <span class="operator">=></span> {
     <span class="keyword">it</span>('<span class="selector">should upload a file</span>', <span class="function">()</span> <span class="operator">=></span> {
+         <span class="keyword">const</span> <span class="function">file</span> = <span class="selector">'example_file.txt'</span>
         <span class="function">cy.</span><span class="method">visit</span>('<span class="selector">https://html-element-for-testing.onrender.com/Upload_File.html</span>');
-        <span class="function">cy.</span><span class="method">get</span>('<span class="selector">#formFile</span>').<span class="method">attachFile</span>('<span class="variable">example_file.txt</span>');
+        <span class="function">cy</span><span class="method">.get</span>('<span class="selector">#formFile</span>')<span class="method">.attachFile</span>(<span class="selector">file</span>);
         <span class="function">cy.</span><span class="method">get</span>('<span class="selector">#submit</span>').<span class="method">click</span>();
         <span class="function">cy.</span><span class="method">get</span>('<span class="selector">#FileName</span>')<span class="method">.should</span>(<span class="selector">'have.text',</span> <span class="selector">'example_file.txt'</span>);
     });
