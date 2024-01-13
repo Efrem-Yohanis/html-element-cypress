@@ -213,14 +213,14 @@
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck2" checked>
+                                <input class="form-check-input" type="checkbox" id="gridCheck3" checked>
                                 <label class="form-check-label" for="gridCheck2">
                        checkbox 3
                     </label>
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck2" checked>
+                                <input class="form-check-input" type="checkbox" id="gridCheck4" checked>
                                 <label class="form-check-label" for="gridCheck2">
                        checkbox 4
                     </label>
@@ -239,18 +239,18 @@
 <pre>
     <code>
 <span class="describe">describe</span>( <span class="name">'Checkbox Tests',</span>  <span class="function">() =></span> {
-    <span class="function">beforeEach</span>(() => {
-        <span class="function">cy</span><span class="describe">.visit</span>(<span class="name">"https://www.example.com"</span> )
-    });
+   
     <span class="describe">it</span>(<span class="name">'should check and uncheck a checkbox'</span> , <span class="function">function ()</span>{
-        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.checkbox1'</span>)<span class="describe">.check();</span>
-        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.checkbox1'</span>)<span class="describe">.should</span>(<span class="name">'be.checked')</span> 
-        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.checkbox1'</span>)<span class="describe">.uncheck();</span>
-        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.checkbox1'</span>)<span class="describe">.should</span>(<span class="name">'not.be.check')</span>}
+        <span class="function">cy</span><span class="describe">.visit</span>(<span class="name">"https://html-element-for-testing.onrender.com/Check_Box.html"</span> )
+        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'#gridCheck1'</span>)<span class="describe">.check();</span>
+        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'#gridCheck2'</span>)<span class="describe">.should</span>(<span class="name">'be.checked')</span> 
+        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'#gridCheck3'</span>)<span class="describe">.uncheck();</span>
+        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'#gridCheck4'</span>)<span class="describe">.should</span>(<span class="name">'not.be.check')</span>}
 
     <span class="describe">it</span>(<span class="name">'should check multiple checkboxes'</span> , <span class="function">function ()</span>{
-        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.checkbox-class'</span>)<span class="describe">.check(<span class="name">{ multiple: true }</span>);</span>
-        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.checkbox-class'</span>)<span class="function">.each(</span><span class="describe">($checkbox)</span> <span class="function">) => {</span>
+        <span class="function">cy</span><span class="describe">.visit</span>(<span class="name">"https://html-element-for-testing.onrender.com/Check_Box.html"</span> )
+        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.form-check-input'</span>)<span class="describe">.check(<span class="name">{ multiple: true }</span>);</span>
+        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.form-check-input'</span>)<span class="function">.each(</span><span class="describe">($checkbox)</span> <span class="function">) => {</span>
         <span class="function">cy</span><span class="describe">.wrap</span>(<span class="name">$checkbox</span>)<span class="describe">.should</span>(<span class="name">'be.checked'</span>)});
     });
 });

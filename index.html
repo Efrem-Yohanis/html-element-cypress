@@ -206,10 +206,10 @@
                             <h1 class="card-title">Implementation</h1>
 <pre>
     <code>
-<span class="describe">describe</span>(<span class="name">'Tutorialspoint'</span>, <span class="function">function ()</span> {
-    <span class="describe">it</span>(<span class="name">'Scenario 1'</span> , <span class="function">function ()</span>{
-        <span class="function">cy</span> <span class="describe">.visit</span>(<span class="name">"https://test.com"</span> )
-        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'h1'</span>)<span class="describe">.then</span>(<span class="function">function(e)</span>{
+<span class="describe">describe</span>(<span class="name">'Testing html element'</span>, <span class="function">function ()</span> {
+    <span class="describe">it</span>(<span class="name">'Text verification'</span> , <span class="function">function ()</span>{
+        <span class="function">cy</span> <span class="describe">.visit</span>(<span class="name">"https://html-element-for-testing.onrender.com/index.html"</span> )
+        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'#text'</span>)<span class="describe">.then</span>(<span class="function">function(e)</span>{
         <span class="var">const</span> <span class="describe">t</span> = <span class="describe">e</span><span class="var">.text()</span>
         <span class="function">expect(t)</span><span class="describe">.to</span><span class="function">.contains</span>(<span class="name">'This is h1 element'</span>)
         })

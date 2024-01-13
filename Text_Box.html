@@ -232,27 +232,30 @@
                             <pre>
                                 <code>
 <span class="describe">describe</span>( <span class="name">'Text Box Tests',</span>  <span class="function">() =></span> {
-    <span class="function">beforeEach</span>(() => {
-        <span class="function">cy</span><span class="describe">.visit</span>(<span class="name">"https://www.example.com"</span> )
-    });
+    
     <span class="describe">it</span>(<span class="name">'should enter text into a text input field'</span> , <span class="function">function ()</span>{
+        <span class="function">cy</span><span class="describe">.visit</span>(<span class="name">"https://html-element-for-testing.onrender.com/Text_Box.html"</span> )
         <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.text'</span>)<span class="describe">.type</span>(<span class="name">'Hello, World!'</span>);
         <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.text'</span>)<span class="describe">.should</span>(<span class="name">'have.value',</span> <span class="name">'Hello, World!'</span>);
     });
 
     <span class="describe">it</span>(<span class="name">'should enter an email into an email input field'</span> , <span class="function">function ()</span>{
+        <span class="function">cy</span><span class="describe">.visit</span>(<span class="name">"https://html-element-for-testing.onrender.com/Text_Box.html"</span> )
         <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.email'</span>)<span class="describe">.type</span>(<span class="name">'example@example.com'</span>);
         <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.email'</span>)<span class="describe">.should</span>(<span class="name">'have.value',</span> <span class="name">'example@example.com'</span>);
     });
     <span class="describe">it</span>(<span class="name">'should enter a password into a password input field'</span> , <span class="function">function ()</span>{
+        <span class="function">cy</span><span class="describe">.visit</span>(<span class="name">"https://html-element-for-testing.onrender.com/Text_Box.html"</span> )
         <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.password'</span>)<span class="describe">.type</span>(<span class="name">'secretpassword'</span>);
         <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.password'</span>)<span class="describe">.should</span>(<span class="name">'have.value',</span> <span class="name">'secretpassword'</span>);
     });
     <span class="describe">it</span>(<span class="name">'should enter a number into a number input field'</span> , <span class="function">function ()</span>{
+        <span class="function">cy</span><span class="describe">.visit</span>(<span class="name">"https://html-element-for-testing.onrender.com/Text_Box.html"</span> )
         <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.number'</span>)<span class="describe">.type</span>(<span class="name">'42'</span>);
         <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.number'</span>)<span class="describe">.should</span>(<span class="name">'have.value',</span> <span class="name">'42'</span>);
     });
     <span class="describe">it</span>(<span class="name">'should enter text into a textarea'</span> , <span class="function">function ()</span>{
+        <span class="function">cy</span><span class="describe">.visit</span>(<span class="name">"https://html-element-for-testing.onrender.com/Text_Box.html"</span> )
         <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.message'</span>)<span class="describe">.type</span>(<span class="name">'This is a textarea.'</span>);
         <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'.message'</span>)<span class="describe">.should</span>(<span class="name">'have.value',</span> <span class="name">'This is a textarea.'</span>);
     });
