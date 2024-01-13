@@ -35,19 +35,19 @@
         }
     
         .keyword {
-          color: blue;
-          font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-        }
+            color: rgb(255, 179, 0);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+           }
     
         .selector {
-          color: purple;
-          font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-        }
+            color: rgba(35, 205, 8, 0.93);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+              }
     
         .method {
-          color: green;
-          font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-        }
+            color: orange;
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+          }
     
         .variable {
           color: orange;
@@ -55,9 +55,9 @@
         }
     
         .function {
-          color: teal;
-          font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-        }
+            color: rgb(16, 87, 241);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+           }
     
         .assertion {
           color: #800000;
@@ -190,7 +190,7 @@
         </div>
         <div class="pagetitle">
             <h1>Upload File</h1>
-
+            <hr>
         </div>
         <!-- End Page Title -->
 
@@ -202,8 +202,14 @@
                             <div class="row mb-3">
                                 <label for="inputNumber" class="col-sm-3 col-form-label">File Upload</label>
                                 <div class="col-sm-9">
+                                    <form id="myForm" enctype="multipart/form-data">
                                     <input class="form-control" type="file" id="formFile" name="FileUpload">
-                                    <button type="button" class="btn btn-primary mt-3" id="submit">submit</button>
+                                    <input type="submit" value="Upload"  class="btn btn-primary mt-3" id="submit">
+                                    </form>
+                                    <hr>
+                                    <div class="mt-2">
+                                        <span>Uploaded File Name:- </span><span id="fileName"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -218,10 +224,10 @@
 <code>
     <span class="keyword">describe</span>('<span class="selector">File Upload Test</span>', <span class="function">()</span> <span class="operator">=></span> {
     <span class="keyword">it</span>('<span class="selector">should upload a file</span>', <span class="function">()</span> <span class="operator">=></span> {
-        cy.<span class="method">visit</span>('<span class="selector">https://www.example.com</span>');
-        cy.<span class="method">get</span>('<span class="selector">input[type="file"]</span>').<span class="method">attachFile</span>('<span class="variable">example_file.txt</span>');
-        cy.<span class="method">get</span>('<span class="selector">button[type="submit"]</span>').<span class="method">click</span>();
-        cy.<span class="method">contains</span>('<span class="selector">File uploaded successfully!</span>');
+        <span class="function">cy.</span><span class="method">visit</span>('<span class="selector">https://html-element-for-testing.onrender.com/Upload_File.html</span>');
+        <span class="function">cy.</span><span class="method">get</span>('<span class="selector">#formFile</span>').<span class="method">attachFile</span>('<span class="variable">example_file.txt</span>');
+        <span class="function">cy.</span><span class="method">get</span>('<span class="selector">#submit</span>').<span class="method">click</span>();
+        <span class="function">cy.</span><span class="method">get</span>('<span class="selector">#FileName</span>')<span class="method">.should</span>(<span class="selector">'have.text',</span> <span class="selector">'example_file.txt'</span>);
     });
     });
 </code>
@@ -258,6 +264,26 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+
+   <script>
+
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+      
+        var fileInput = document.getElementById("formFile");
+        var file = fileInput.files[0]; // Get the selected file
+      
+        if (file) {
+          var fileName = file.name; // Get the file name
+      
+          // Display the file name on the HTML page
+          var fileNameElement = document.getElementById("fileName");
+          fileNameElement.textContent = fileName;
+        }
+      });
+   </script>
+    
 
 </body>
 

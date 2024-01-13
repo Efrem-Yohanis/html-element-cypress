@@ -35,19 +35,19 @@
         }
     
         .keyword {
-          color: blue;
-          font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-        }
+            color: rgb(255, 179, 0);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+           }
     
         .selector {
-          color: purple;
-          font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-        }
+            color: rgba(35, 205, 8, 0.93);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+              }
     
         .method {
-          color: green;
-          font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
-        }
+            color: rgb(255, 179, 0);
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+            }
     
         .variable {
           color: orange;
@@ -63,6 +63,44 @@
           color: #800000;
           font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
         }
+
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+          }
+          .describe {
+              color: rgb(255, 179, 0);
+              font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+            
+          }
+          .function{
+              color: rgb(16, 87, 241);
+              font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+              
+          }
+          .name{
+               color: rgba(35, 205, 8, 0.93);
+               font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+               
+          }
+          .cy{
+              color: rgb(16, 87, 241);
+              font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+              
+          }
+          .get{
+              color: rgba(255, 255, 0, 0.87);
+              font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+              
+          }
+          .var{
+              color: rgb(16, 87, 241);
+              font-family: "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+             
+          }
       </style>
 </head>
 
@@ -228,26 +266,25 @@
 <pre>
     <code>
 <span class="keyword">describe</span><span class="selector">('Radio Button Tests'</span>, <span class="function">()</span> <span class="operator">=></span> {
-<span class="keyword">beforeEach</span><span class="selector">(()</span> <span class="operator">=></span> {
-    <span class="function">cy.</span><span class="method">visit</span><span class="selector">('https://www.example.com')</span>;
-});
 
     <span class="keyword">it</span><span class="selector">('should select a radio button'</span>, <span class="function">()</span> <span class="operator">=></span> {
-        <span class="function">cy.</span><span class="method">get</span><span class="selector">('input[type="radio"]')</span>.<span class="method">first</span><span class="selector">().<span class="method">check</span></span>();
-        <span class="function">cy.</span><span class="method">get</span><span class="selector">('input[type="radio"]')</span>.<span class="method">first</span><span class="selector">().<span class="method">should</span></span>(<span class="assertion">'be.checked'</span>);
+        <span class="function">cy.</span><span class="method">visit</span><span class="selector">('https://html-element-for-testing.onrender.com/Radio_button.html')</span>;
+        <span class="function">cy.</span><span class="method">get</span><span class="selector">('.form-check-input')</span>.<span class="method">first</span><span class="selector">().<span class="method">check</span></span>();
+        <span class="function">cy.</span><span class="method">get</span><span class="selector">('.form-check-input')</span>.<span class="method">first</span><span class="selector">().<span class="method">should</span></span>(<span class="assertion">'be.checked'</span>);
     });
 
     <span class="keyword">it</span><span class="selector">('should verify only one radio button can be selected at a time'</span>, <span class="function">()</span> <span class="operator">=></span> {
-        <span class="function">cy.</span><span class="method">get</span><span class="selector">('input[type="radio"]')</span>.<span class="method">eq</span><span class="selector">(0).<span class="method">check</span></span>();
-        <span class="function">cy.</span><span class="method">get</span><span class="selector">('input[type="radio"]')</span>.<span class="method">eq</span><span class="selector">(0).<span class="method">should</span></span>(<span class="assertion">'not.be.checked'</span>);
+        <span class="function">cy.</span><span class="method">visit</span><span class="selector">('https://html-element-for-testing.onrender.com/Radio_button.html')</span>;
+        <span class="function">cy.</span><span class="method">get</span><span class="selector">('.form-check-input')</span>.<span class="method">eq</span><span class="selector">(0).<span class="method">check</span></span>();
+        <span class="function">cy.</span><span class="method">get</span><span class="selector">('.form-check-input')</span>.<span class="method">eq</span><span class="selector">(0).<span class="method">should</span></span>(<span class="assertion">'be.checked'</span>);
 
-        <span class="function">cy.</span><span class="method">get</span><span class="selector">('input[type="radio"]')</span>.<span class="method">eq</span><span class="selector">(1).<span class="method">check</span></span>();
-        <span class="function">cy.</span><span class="method">get</span><span class="selector">('input[type="radio"]')</span>.<span class="method">eq</span><span class="selector">(0).<span class="method">should</span></span>(<span class="assertion">'not.be.checked'</span>);
-        <span class="function">cy.</span><span class="method">get</span><span class="selector">('input[type="radio"]')</span>.<span class="method">eq</span><span class="selector">(1).<span class="method">should</span></span>(<span class="assertion">'be.checked'</span>);
+        <span class="function">cy.</span><span class="method">get</span><span class="selector">('.form-check-input')</span>.<span class="method">eq</span><span class="selector">(1).<span class="method">check</span></span>();
+        <span class="function">cy.</span><span class="method">get</span><span class="selector">('.form-check-input')</span>.<span class="method">eq</span><span class="selector">(0).<span class="method">should</span></span>(<span class="assertion">'not.be.checked'</span>);
+        <span class="function">cy.</span><span class="method">get</span><span class="selector">('.form-check-input')</span>.<span class="method">eq</span><span class="selector">(1).<span class="method">should</span></span>(<span class="assertion">'be.checked'</span>);
 
-        <span class="function">cy.</span><span class="method">get</span><span class="selector">('input[type="radio"]')</span>.<span class="method">eq</span><span class="selector">(2).<span class="method">check</span></span>();
-        <span class="function">cy.</span><span class="method">get</span><span class="selector">('input[type="radio"]')</span>.<span class="method">eq</span><span class="selector">(1).<span class="method">should</span></span>(<span class="assertion">'not.be.checked'</span>);
-        <span class="function">cy.</span><span class="method">get</span><span class="selector">('input[type="radio"]')</span>.<span class="method">eq</span><span class="selector">(2).<span class="method">should</span></span>(<span class="assertion">'be.checked'</span>);
+        <span class="function">cy.</span><span class="method">get</span><span class="selector">('.form-check-input')</span>.<span class="method">eq</span><span class="selector">(2).<span class="method">check</span></span>();
+        <span class="function">cy.</span><span class="method">get</span><span class="selector">('.form-check-input')</span>.<span class="method">eq</span><span class="selector">(1).<span class="method">should</span></span>(<span class="assertion">'not.be.checked'</span>);
+        <span class="function">cy.</span><span class="method">get</span><span class="selector">('.form-check-input')</span>.<span class="method">eq</span><span class="selector">(2).<span class="method">should</span></span>(<span class="assertion">'be.checked'</span>);
     });
 });
     </code>
