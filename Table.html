@@ -213,35 +213,35 @@
               </thead>
               <tbody id="table-body">
                 <tr>
-                  <th scope="row">1</th>
+                  <td>1</td>
                   <td>Brandon Jacob</td>
                   <td>Designer</td>
                   <td>28</td>
                   
                 </tr>
                 <tr>
-                  <th scope="row">2</th>
+                  <td>2</td>
                   <td>Bridie Kessler</td>
                   <td>Developer</td>
                   <td>35</td>
                  
                 </tr>
                 <tr>
-                  <th scope="row">3</th>
+                  <td>3</td>
                   <td>Ashleigh Langosh</td>
                   <td>Finance</td>
                   <td>45</td>
                   
                 </tr>
                 <tr>
-                  <th scope="row">4</th>
+                  <td>4</td>
                   <td>Angus Grady</td>
                   <td>HR</td>
                   <td>34</td>
                  
                 </tr>
                 <tr>
-                  <th scope="row">5</th>
+                  <td>5</td>
                   <td>Raheem Lehner</td>
                   <td>Dynamic Division Officer</td>
                   <td>47</td>
@@ -263,36 +263,45 @@
                 <h1 class="card-title">Implementation</h1>
                 <pre>
                     <code>
-<span class="describe">describe</span>( <span class="name">'Text Box Tests',</span>  <span class="function">() =></span> {
-beforeEach(() => {
-<span class="function">cy</span> <span class="describe">.visit</span>(<span class="name">"https://www.example.com"</span> )
-});
-it</span>(<span class="name">'should enter text into a text input field'</span> , <span class="function">function ()</span>{
-cy.get('.name').type('Hello, World!');
-cy.get('.name').should('have.value', 'Hello, World!');
-});
+describe('Table Test', () => {
+    it('Check the existence of the table on the page.', () => {
+        cy.visit("https://html-element-for-testing.onrender.com/Table.html")
+        cy.get('#table')
+        .should('exist')
+        .and('be.visible')
+    });
 
-it('should enter an email into an email input field', () => {
-cy.get('.name').type('example@example.com');
-cy.get('.name).should('have.value', 'example@example.com');
-});
+    it('Check the length of col', () => {
+        cy.visit("https://html-element-for-testing.onrender.com/Table.html")
+        cy.get('#table-head th').should('have.length', 4);
+        
+    });
+    
+    it('Check the length of row', () => {
+        cy.visit("https://html-element-for-testing.onrender.com/Table.html")
+        cy.get('#table-body tr').should('have.length', 5);
+        
+    });
+    
+    it('Check the name of each col', () => {
+        cy.visit("https://html-element-for-testing.onrender.com/Table.html")
+        cy.get('#table-head th').eq(0).should('have.text', '#');
+        cy.get('#table-head th').eq(1).should('have.text', 'Name');
+        cy.get('#table-head th').eq(2).should('have.text', 'Position');
+        cy.get('#table-head th').eq(3).should('have.text', 'Age');
+    
+    });
+    
+    it.only('should display the correct data in the table', () => {
+        cy.visit("https://html-element-for-testing.onrender.com/Table.html")
+        cy.get('#table-body tr').eq(0).find('td').eq(0).should('have.text', '1');
+        cy.get('#table-body tr').eq(0).find('td').eq(1).should('have.text', 'Brandon Jacob');
+        cy.get('#table-body tr').eq(0).find('td').eq(2).should('have.text', 'Designer');
+        cy.get('#table-body tr').eq(0).find('td').eq(3).should('have.text', '28');
+        
+    });
 
-it('should enter a password into a password input field', () => {
-cy.get('.name').type('secretpassword');
-cy.get('.name').should('have.value', 'secretpassword');
-});
-
-it('should enter a number into a number input field', () => {
-cy.get('.name').type('42');
-cy.get('.name').should('have.value', '42');
-});
-
-it('should enter text into a textarea', () => {
-cy.get('.message').type('This is a textarea.');
-cy.get('.message').should('have.value', 'This is a textarea.');
-});
-});
-
+})
 <pre>
 <code>
             </div>
