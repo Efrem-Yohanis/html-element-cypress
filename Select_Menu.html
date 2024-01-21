@@ -132,7 +132,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="Frames.html">
+                <a class="nav-link " href="Table.html">
                     <span>Frames</span>
                 </a>
             </li>
@@ -215,15 +215,13 @@
                             <h1 class="card-title">Implementation</h1>
 <pre>
     <code>
-<span class="describe">describe</span>(<span class="name">'Tutorialspoint'</span>, <span class="function">function ()</span> {
-    <span class="describe">it</span>(<span class="name">'Scenario 1'</span> , <span class="function">function ()</span>{
-        <span class="function">cy</span> <span class="describe">.visit</span>(<span class="name">"https://test.com"</span> )
-        <span class="function">cy</span><span class="describe">.get</span>(<span class="name">'h1'</span>)<span class="describe">.then</span>(<span class="function">function(e)</span>{
-        <span class="var">const</span> <span class="describe">t</span> = <span class="describe">e</span><span class="var">.text()</span>
-        <span class="function">expect(t)</span><span class="describe">.to</span><span class="function">.contains</span>(<span class="name">'This is h1 element'</span>)
-        })
+
+describe("select menu verifiction",()=>{
+    it('Select option Two',()=>{
+        cy.visit("https://html-element-for-testing.onrender.com/Select_Menu.html")
+        cy.get('#floatingSelect').select("Two").should("have.value","2")
     })
- })
+})
     </code>
 </pre>
                         </div>
